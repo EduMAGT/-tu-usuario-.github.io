@@ -56,20 +56,19 @@
 
         document.getElementById('si').addEventListener('click', function() {
             document.getElementById('mensaje').innerHTML = '¡TKM Marina! ❤️';
-            document.getElementById('no').style.display = 'block';  // Show no button in case it was hidden
-            document.getElementById('si').style.fontSize = '16px';  // Reset size
-            noCount = 0;  // Reset counter
+            document.getElementById('no').style.display = 'block'; // Re-display the No button if hidden
+            document.getElementById('si').style.fontSize = '16px'; // Reset the size of Yes button
+            noCount = 0; // Reset the no counter
         });
 
         document.getElementById('no').addEventListener('click', function() {
-            if (noCount < mensajes.length) {
-                document.getElementById('mensaje').innerHTML = mensajes[noCount];
-                noCount++;
-            }
+            document.getElementById('mensaje').innerHTML = mensajes[noCount];
+            noCount++;
             if (noCount >= mensajes.length) {
-                document.getElementById('no').style.display = 'none';
+                document.getElementById('no').style.display = 'none'; // Hide the No button
+                document.getElementById('si').style.display = 'block'; // Ensure Yes button is still visible
             }
-            document.getElementById('si').style.fontSize = (16 + noCount * 2) + 'px';
+            document.getElementById('si').style.fontSize = (16 + noCount * 2) + 'px'; // Increase font size of Yes button
         });
     </script>
 </body>
