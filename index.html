@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi página en GitHub</title>
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            background-image: url('https://www.facebook.com/share/aoNgZiRvmpEHq2X8/?mibextid=ox5AEW');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        #mensaje {
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #si {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+        }
+        .oculto {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hola, mundo!</h1>
-    <p>Bienvenido a mi página web alojada en GitHub Pages.</p>
+    <h1 style="color: white;">¿Me perdonas?</h1>
+    <button id="si">Sí</button>
+    <button id="no">No</button>
+    <div id="mensaje"></div>
+
+    <script>
+        let noCount = 0;
+
+        document.getElementById('si').addEventListener('click', function() {
+            document.getElementById('mensaje').innerHTML = '¡TKM Marina! ❤️';
+            document.getElementById('mensaje').style.display = 'block';
+        });
+
+        document.getElementById('no').addEventListener('click', function() {
+            noCount++;
+            document.getElementById('mensaje').innerHTML = 'Marina, lo siento, sabes no me canso de escucharte hablar, aún te debo tu helado y no puedo dartelo si estás molesta. Si me perdonas, te enseñaré a manejar moto, simplemente perdóname por ser linda.';
+            document.getElementById('mensaje').style.display = 'block';
+            if (noCount >= 5) {
+                document.getElementById('no').style.display = 'none';
+            }
+            document.getElementById('si').style.fontSize = (16 + noCount * 2) + 'px';
+        });
+    </script>
 </body>
 </html>
