@@ -4,28 +4,28 @@
     <title>¿Me perdonas?</title>
     <style>
         body {
-            background-image: url('https://www.facebook.com/share/aoNgZiRvmpEHq2X8/?mibextid=ox5AEW');
+            background-image: url('https://tu-enlace-a-una-imagen-de-girasoles-aqui.jpg');
             background-size: cover;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding-top: 100px;
+            padding-top: 50px;
+            margin: 0;
         }
         #mensaje {
-            margin-top: 20px;
-            font-size: 20px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 8px;
-            display: none;
+            margin: 20px;
+            font-size: 16px;
         }
         button {
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 12px 24px;
+            font-size: 16px;
             cursor: pointer;
             border: none;
             border-radius: 5px;
-            margin: 10px;
+            margin-top: 10px;
         }
         #si {
             background-color: #4CAF50;
@@ -35,10 +35,8 @@
             background-color: #f44336;
             color: white;
         }
-        .oculto {
-            display: none;
-        }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <h1 style="color: white;">¿Me perdonas?</h1>
@@ -47,18 +45,28 @@
     <div id="mensaje"></div>
 
     <script>
+        const mensajes = [
+            "Marina, lo siento, sabes no me canso de escucharte hablar.",
+            "Aún te debo tu helado y no puedo dartelo si estás molesta.",
+            "Si me perdonas, te enseñaré a manejar moto.",
+            "Simplemente perdóname por ser linda.",
+            "Es imposible no querer pasar cada momento contigo."
+        ];
         let noCount = 0;
 
         document.getElementById('si').addEventListener('click', function() {
             document.getElementById('mensaje').innerHTML = '¡TKM Marina! ❤️';
-            document.getElementById('mensaje').style.display = 'block';
+            document.getElementById('no').style.display = 'block';  // Show no button in case it was hidden
+            document.getElementById('si').style.fontSize = '16px';  // Reset size
+            noCount = 0;  // Reset counter
         });
 
         document.getElementById('no').addEventListener('click', function() {
-            noCount++;
-            document.getElementById('mensaje').innerHTML = 'Marina, lo siento, sabes no me canso de escucharte hablar, aún te debo tu helado y no puedo dartelo si estás molesta. Si me perdonas, te enseñaré a manejar moto, simplemente perdóname por ser linda.';
-            document.getElementById('mensaje').style.display = 'block';
-            if (noCount >= 5) {
+            if (noCount < mensajes.length) {
+                document.getElementById('mensaje').innerHTML = mensajes[noCount];
+                noCount++;
+            }
+            if (noCount >= mensajes.length) {
                 document.getElementById('no').style.display = 'none';
             }
             document.getElementById('si').style.fontSize = (16 + noCount * 2) + 'px';
