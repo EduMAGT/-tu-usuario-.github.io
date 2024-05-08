@@ -4,18 +4,12 @@
     <title>¿Me perdonas?</title>
     <style>
         body {
+            background-image: url('https://i.postimg.cc/KzVrB9Bk/IMG-4827.jpg');
+            background-size: cover;
             font-family: Arial, sans-serif;
             text-align: center;
+            padding-top: 50px;
             margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: white;
-            background-image: url('https://example.com/your-heart-image.jpg'); /* Cambia esto por la URL de tu imagen de corazones */
-            color: black;
-            padding: 20px;
-            background-size: cover;
-            height: 150px; /* Ajusta la altura según necesites */
         }
         #mensaje {
             color: white;
@@ -32,40 +26,23 @@
             border: none;
             border-radius: 5px;
             margin-top: 10px;
-            position: absolute; /* Posicionamiento absoluto para colocar sobre la imagen */
-            width: 100px; /* Ajuste de ancho fijo para los botones */
         }
         #si {
             background-color: #4CAF50;
             color: white;
-            left: 50%; /* Centrado del botón */
-            transform: translateX(-120px); /* Ajuste fino de la posición */
         }
         #no {
             background-color: #f44336;
             color: white;
-            left: 50%; /* Centrado del botón */
-            transform: translateX(20px); /* Ajuste fino de la posición */
-        }
-        .image-container {
-            background-image: url('https://i.postimg.cc/KzVrB9Bk/IMG-4827.jpg'); /* Imagen de los girasoles */
-            background-size: cover;
-            height: 300px; /* Ajusta esto según necesites */
-            width: 100%;
-            position: relative; /* Relativo para posicionar los botones encima */
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="header">
-        <h1>¿Me perdonas, Marina?</h1>
-    </div>
+    <h1 style="color: white;">¿Me perdonas, Marina?</h1>
+    <button id="si">Sí</button>
+    <button id="no">No</button>
     <div id="mensaje">¿Me perdonas, Marina?</div>
-    <div class="image-container">
-        <button id="si">Sí</button>
-        <button id="no">No</button>
-    </div>
 
     <script>
         const mensajes = [
